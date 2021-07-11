@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1 th:text="${titles[0]}"></h1>
+<ul >
+    <li th:text="'Artist: '+${artists[0]}"></li>
+    <li th:text="'Song Count: '+${songCounts[0]}"></li>
+    <li th:text="'length in seconds: '+${lengths[0]}"></li>
+    <li th:text="'Image url: '+${imageUrls[0]}"></li>
+</ul>
+<h1 th:text="${titles[1]}"></h1>
+<ul >
+    <li th:text="'Artist: '+${artists[1]}"></li>
+    <li th:text="'Song Count: '+${songCounts[1]}"></li>
+    <li th:text="'length in seconds: '+${lengths[1]}"></li>
+    <li th:text="'Image url: '+${imageUrls[1]}"></li>
+</ul>
+<h1 th:text="${titles[2]}"></h1>
+<ul >
+    <li th:text="'Artist: '+${artists[2]}"></li>
+    <li th:text="'Song Count: '+${songCounts[2]}"></li>
+    <li th:text="'length in seconds: '+${lengths[2]}"></li>
+    <li th:text="'Image url: '+${imageUrls[2]}"></li>
+</ul>
+</body>
+</html>
