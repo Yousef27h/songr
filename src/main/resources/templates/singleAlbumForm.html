@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>single Album Form</title>
+</head>
+<body>
+<form th:action="@{/getSingleAlbum}" method="post">
+  <label>Enter album title to search for:</label>
+  <input type="text" name="title" />
+
+</form>
+</body>
+</html>

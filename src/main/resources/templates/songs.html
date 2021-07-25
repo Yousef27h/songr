@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<a href="/"><< Home </a>
+<ol th:each="song: ${songs}">
+    <li th:text="${song.title}"></li>
+    <p th:text="'Length: '+${song.length}"></p>
+    <p th:text="'Track Number: '+${song.trackNumber}"></p>
+</ol>
+</body>
+</html>

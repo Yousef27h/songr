@@ -1,12 +1,53 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
     <link th:href="@{/css/splash.css}" rel="stylesheet"/>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@900&display=swap');
+    </style>
 </head>
 <body>
-<h1>Songr</h1>
-<h3>Welcome to Spring MVC Demo</h3>
+<header >
+    <h1>Songr</h1>
+    <ul id="horizontal-list">
+        <li><a href="/songs">View All Songs</a></li>
+        <li><a href="/albums">View All Albums</a></li>
+        <li><a href="/songToAlbum">Add song to album</a></li>
+    </ul>
+</header>
+<main>
+    <fieldset>
+        <legend>Add Album </legend>
+    <form action="#" th:action="@{/albums}"  method="post">
+        <label>Enter a title for new album:</label><br>
+            <input type="text" name="title"/>
+        <br> <br> <br>
+        <label>Name of the artist:</label><br>
+            <input type="text" name="artist"/>
+        <br> <br> <br>
+        <label>Image url for album:</label><br>
+            <input type="text" name="imageUrl"/>
+        <br> <br> <br>
+        <label>Length in seconds: </label><br>
+            <input type="number" name="length"/>
+        <br> <br> <br>
+        <label>Songs count:</label><br>
+            <input type="number" name="songCount"/>
+        <br> <br> <br>
+        <button type="submit">Submit</button>
+    </form>
+    </fieldset>
+    <h1>Albums:</h1>
+    <ul th:each="album: ${albums}">
+        <li th:text="${album.title}"></li>
+        <li th:text="${album.artist}"></li>
+        <li th:text="${album.songCount}"></li>
+        <li th:text="${album.length}"></li>
+        <li th:text="${album.imageUrl}"></li>
+<!--        <li><a href="/">redirect</a></li>-->
+    </ul>
+</main>
 </body>
 </html>
