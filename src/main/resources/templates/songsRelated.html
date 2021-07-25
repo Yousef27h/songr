@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Songs Related</title>
+</head>
+<body>
+<fieldset>
+    <legend>Add Album </legend>
+    <form action="#" th:action="@{/albumSongs}" th:object="${albumSongs}" method="post">
+        <label>Enter album's Id to get songs from:</label><br>
+        <input type="number" name="albumId"/>
+        <br> <br> <br>
+        <button type="submit">Submit</button>
+    </form>
+</fieldset>
+<ul th:each="song: ${songs}">
+  <li th:text="${song.title}"></li>
+  <li th:text="${song.length}"></li>
+  <li th:text="${song.trackNumber}"></li>
+</ul>
+</body>
+</html>

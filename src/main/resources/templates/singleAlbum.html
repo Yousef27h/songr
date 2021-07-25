@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>One Album</title>
+</head>
+<body>
+<h1 th:text="'Title: '+${oneAlbum.getTitle()}"></h1>
+<p th:text="'Artist: '+${oneAlbum.getArtist()}"></p>
+<p th:text="'Length: '+${oneAlbum.getLength()}"></p>
+<p th:text="'Image URL: '+${oneAlbum.getImageUrl()}"></p>
+<p th:text="'Song Count: '+${oneAlbum.getSongCount()}"></p>
+<ol th:each="song : ${oneAlbum.getSong()}">
+    <li th:text="'Song: '+${song.getTitle()}"></li>
+    <p th:text="'Length: '+${song.getLength()}"></p>
+    <p th:text="'Track Number: '+${song.getTrackNumber()}"></p>
+</ol>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en"  xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Songs To Album</title>
+</head>
+
+<body>
+<a href="/"><< Home</a>
+<form th:action="@{/songToAlbum}" method="post">
+    <label>Enter album title to add songs to: </label>
+    <input type="text" name="albumTitle" />
+    <label>Enter Song Title: </label>
+    <input type="text" name="songTitle" />
+    <label>Enter Song Length: </label>
+    <input type="text" name="songLength" />
+    <label>Enter Song Track Number: </label>
+    <input type="text" name="trackNumber" />
+    <input type="submit"/>
+</form>
+
+<ul>
+    <li th:each="album : ${albums}">
+        <p><span th:text="${album.getTitle()}"></span></p>
+        <p>Artist : <span th:text="${album.getArtist()}"></span></p>
+        <p>Songs : <ul th:each="song : ${album.getSong()}">
+        <li th:text="${song.getTitle}"></li><li th:text="${song.getLength}"></li><li th:text="${song.getTrackNumber}"></li></ul></p>
+    </li>
+</ul>
+</body>
+</html>

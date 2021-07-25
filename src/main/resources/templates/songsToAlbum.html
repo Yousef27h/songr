@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Album</title>
+</head>
+<body>
+
+<h1 th:text="${album.getTitle()}"></h1>
+
+<form th:action="@{/songToAlbum}" method="post">
+    <label>Enter album title to add songs to:</label>
+    <input type="text" name="albumTitle" />
+</form>
+</body>
+</html>
